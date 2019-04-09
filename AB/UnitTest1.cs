@@ -23,9 +23,7 @@ namespace AB
         public void FirstTest()
         {
             driver.Url = "https://yandex.ru/";
-          //  driver.FindElement(By.Name("q")).SendKeys("webdriver");
-           // driver.FindElement(By.Name("q")).SendKeys(Keys.Enter);
-          //  wait.Until(ExpectedConditions.TitleIs("webdriver - Поиск в Google"));
+        
         }
 
         [TearDown]
