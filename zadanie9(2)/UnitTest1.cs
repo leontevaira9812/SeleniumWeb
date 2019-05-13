@@ -51,12 +51,12 @@ namespace zadanie9_2_
 
                     int count1 = menuElement.Count;
 
-                    for (int j = 1; j < count - 3; j++)
+                    for (int j = 1; j < count1 - 2; j++)
                     {
-                        IWebElement menuElement_city = menu_Can.FindElements(By.TagName("tr"))[i + 1];
+                        IWebElement menuElement_city = menu_Can.FindElements(By.TagName("tr"))[j];
                         IWebElement submenu_city = menuElement_city.FindElement(By.XPath(".//td[3]"));
                         IWebElement ss = submenu_city.FindElement(By.CssSelector("option[selected='selected']"));
-                        IWebElement menuElement_city1 = menu_Can.FindElements(By.TagName("tr"))[i + 2];
+                        IWebElement menuElement_city1 = menu_Can.FindElements(By.TagName("tr"))[j +1];
                         IWebElement submenu_city1 = menuElement_city1.FindElement(By.XPath(".//td[3]"));
                         IWebElement ss1 = submenu_city1.FindElement(By.CssSelector("option[selected='selected']"));
                         if (ss.Text.CompareTo(ss1.Text) > 0)
