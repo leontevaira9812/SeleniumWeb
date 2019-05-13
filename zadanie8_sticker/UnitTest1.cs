@@ -26,16 +26,17 @@ namespace zadanie8_sticker
         public void FirstTest()
         {
             driver.Url = "http://localhost/litecart/en/";
-      
-            IList<IWebElement> menuPoints = driver.FindElements(By.ClassName("image-wrapper"));
-       
 
-          
-            foreach (IWebElement menuPoint in menuPoints) {
-         
-                if (!AreElementsPresent(menuPoint, By.ClassName("sticker"))) {
-                    Assert.Fail("sticker count error");
-                }
+            IList<IWebElement> menuPoints = driver.FindElements(By.ClassName("sticker"));
+        
+
+            foreach (IWebElement menuPoint in menuPoints)
+            {
+                    if (menuPoint.Text == null)
+                    {
+                        Assert.Fail("sticker count error");
+                    }
+             
             }
 
         }
@@ -51,8 +52,8 @@ namespace zadanie8_sticker
         [TearDown]
         public void stop()
         {
-          driver.Quit();
-           driver = null;
+            driver.Quit();
+            driver = null;
         }
     }
 }
